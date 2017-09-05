@@ -486,6 +486,7 @@ Parser.prototype.parseComplete = function(data){
 };
 
 Parser.prototype.write = function(chunk){
+	console.log('hello from Parser.write', chunk);
 	this._tokenizer.write(chunk);
 };
 
