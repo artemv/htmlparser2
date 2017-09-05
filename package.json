@@ -32,6 +32,7 @@
     "lcov": "istanbul cover _mocha --report lcovonly -- -R spec",
     "coveralls": "npm run lint && npm run lcov && (cat coverage/lcov.info | coveralls || exit 0)",
     "test": "mocha && npm run lint",
+    "dist": "rm -rf dist && mkdir dist && browserify lib/index.js -o dist/htmlparser2.js -s htmlparser2",
     "lint": "eslint lib test"
   },
   "dependencies": {
@@ -43,10 +44,11 @@
     "readable-stream": "^2.0.2"
   },
   "devDependencies": {
+    "browserify": "^14.4.0",
     "coveralls": "^2.11.4",
+    "eslint": "^2.12.0",
     "istanbul": "^0.4.3",
     "mocha": "^2.2.5",
-    "eslint": "^2.12.0",
     "mocha-lcov-reporter": "^1.2.0"
   },
   "browser": {
